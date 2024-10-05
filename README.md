@@ -38,18 +38,6 @@ Once the code is cloned/downloaded, navigate to the project directory on your co
 
 <br>
 
-## Status & Future Improvements
-This learning project is currently complete, with the main focus on shopping cart management.
-
-Potential future enhancements include:
-
-- A main navigation menu
-- Multilingual support
-- Additional restaurant information overlay
-- Like button functionality with toggle.
-
-<br>
-
 ## Contributing
 While contributions are not expected for this personal learning project, I welcome any feedback, suggestions, or ideas for improvement, so feel free to reach out!
 
@@ -63,4 +51,14 @@ This project's source code is open-source and available under the MIT License. Y
 
 - Icons used in this project are from [Phosphor Icons](https://phosphoricons.com/) and are subject of the MIT License.
 
+<br>
 
+## Status & Future Improvements
+This learning project is currently complete, with the main focus on shopping cart management.
+
+Potential future enhancements include:
+
+- A main navigation menu
+- Multilingual support
+- Additional restaurant information overlay
+- Like button functionality with toggle.
