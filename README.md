@@ -8,6 +8,8 @@ This project is part of the Frontend Web Development course from the [Developer 
 
 ## Features
 
+Here is an overview of the most important functions of the project:
+
 - **Responsive Design:** The layout adjusts seamlessly across devices. On desktop, the shopping cart remains sticky, providing easy access without interfering with the page's content.
 
 - **Dynamic Menu & Categories:** Dishes are rendered dynamically using arrays and objects, with different categorized sections. Category images visually separate the sections for easy navigation.
