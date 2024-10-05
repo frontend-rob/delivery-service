@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple delivery service clone.">
+    <title>BestellApp</title>
+
+    <link rel="shortcut icon" href="./assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/basket.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+
+</head>
+
+<body onload="renderContent()">
+
+    <header id="header-content"></header>
+
+    <div id="dish-content" class="main-content-wrapper"></div>
+
+    <div id="basketModal" class="basket-modal hidden"></div>
+
+    <div id="basket-btn-mobile" class="shopping-card-container-mobile">
+        <button class="btn btn-primary btn-circle btn-block" onclick="openBasketOnSmallScreen()">
+            <div class="basket-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                    <path
+                        d="M136,120v56a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm36.84-.8-5.6,56A8,8,0,0,0,174.4,184a7.32,7.32,0,0,0,.81,0,8,8,0,0,0,7.95-7.2l5.6-56a8,8,0,0,0-15.92-1.6Zm-89.68,0a8,8,0,0,0-15.92,1.6l5.6,56a8,8,0,0,0,8,7.2,7.32,7.32,0,0,0,.81,0,8,8,0,0,0,7.16-8.76ZM239.93,89.06,224.86,202.12A16.06,16.06,0,0,1,209,216H47a16.06,16.06,0,0,1-15.86-13.88L16.07,89.06A8,8,0,0,1,24,80H68.37L122,18.73a8,8,0,0,1,12,0L187.63,80H232a8,8,0,0,1,7.93,9.06ZM89.63,80h76.74L128,36.15ZM222.86,96H33.14L47,200H209Z">
+                    </path>
+                </svg>
+                <span id="basket-item-count" class="indicator">0</span>
+            </div>
+            <h4 id="basket-total-amount">Warenkorb</h4>
+        </button>
+    </div>
+    
+    <div id="warningModal" class="alert-modal hidden">
+        <div class="alert-modal-content">
+            <div class="alert-modal-header">
+                <button class="btn btn-neutral btn-circle" onclick="closeMinimumOrderAlert()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                        <path
+                            d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="alert-modal-inner">
+                <div class="alert-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                        <path
+                            d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="modal-alert-text">
+                    <p>Der Mindestbestellwert wurde noch nicht erreicht.</p>
+                    <p>Bitte fügen Sie weitere Artikel hinzu.</p>
+                </div>
+                <button class="btn btn-neutral btn-circle btn-block" onclick="closeMinimumOrderAlert()">
+                    Verstanden
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="success-modal hidden">
+        <div class="success-modal-content">
+            <div class="success-modal-header">
+                <button class="btn btn-neutral btn-circle" onclick="closeSuccessOrderAlert()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                        <path
+                            d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="success-modal-inner">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                        <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                </div>
+                <div class="modal-alert-text">
+                    <p>Vielen Dank für Ihre Bestellung!</p>
+                    <p id="order-time-confirmation"></p>
+                </div>
+                <button class="btn btn-neutral btn-circle btn-block" onclick="closeSuccessOrderAlert()">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer-content"></footer>
+
+
+    <script src="./js/dishes.js"></script>
+    <script src="./script.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/templates.js"></script>
+    <script src="./js/basket.js"></script>
+    <script src="./js/basketView.js"></script>
+    <script src="./js/resize.js"></script>
+    <script src="./js/service.js"></script>
+    <script src="./js/modals.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/order.js"></script>
+
+</body>
+
+</html>
+
+

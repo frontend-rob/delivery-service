@@ -1,0 +1,54 @@
+<section id="dishes" class="dishes-wrapper">
+    ${getHeroContentTemplate()}
+    ${getNavigationTemplate()}
+    <div class="dishes-container">
+        <div class="dishes-content">
+            <div class="favorite-wrapper">
+                <h2 id="favorite-category-headline"></h2>
+                <div id="favorite-dishes"></div>
+            </div>
+            <div class="salad-wrapper">
+                <div id="salad-img"></div>
+                <h2 id="salads-category-headline"></h2>
+                <div id="salad-dishes"></div>
+            </div>
+            <div class="soup-wrapper">
+                <div id="soup-img"></div>
+                <h2 id="soups-category-headline"></h2>
+                <div id="soup-dishes"></div>
+            </div>
+            <div class="bowl-wrapper">
+                <div id="bowl-img"></div>
+                <h2 id="bowls-category-headline"></h2>
+                <div id="bowl-dishes"></div>
+            </div>
+            <div class="sushi-wrapper">
+                <div id="sushi-img"></div>
+                <h2 id="sushi-category-headline"></h2>
+                <div id="sushi-dishes"></div>
+            </div>
+            <div class="dessert-wrapper">
+                <div id="dessert-img"></div>
+                <h2 id="desserts-category-headline"></h2>
+                <div id="dessert-dishes"></div>
+            </div>
+        </div>
+    </div>
+    <div id="basket-btn-mobile" class="hidden shopping-card-container-mobile">
+        <button class="btn btn-primary btn-circle btn-block" onclick="openBasketOnSmallScreen()">
+            <div class="basket-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                    <path
+                        d="M140,128v40a12,12,0,0,1-24,0V128a12,12,0,0,1,24,0Zm28.06-1.19-4,40a12,12,0,0,0,10.75,13.13c.4,0,.81.06,1.2.06a12,12,0,0,0,11.93-10.81l4-40a12,12,0,0,0-23.88-2.38Zm-80.12,0a12,12,0,0,0-23.88,2.38l4,40A12,12,0,0,0,80,180c.39,0,.8,0,1.2-.06a12,12,0,0,0,10.75-13.13Zm156-37.22-15.07,113A20.06,20.06,0,0,1,209,220H47a20.06,20.06,0,0,1-19.82-17.36l-15.07-113A12,12,0,0,1,24,76H66.55L119,16.1a12,12,0,0,1,18.06,0L189.45,76H232a12,12,0,0,1,11.89,13.59ZM98.45,76h59.1L128,42.22Zm119.84,24H37.71l12.8,96h155Z">
+                    </path>
+                </svg>
+                <span id="basket-item-count" class="indicator">0</span>
+            </div>
+            <h4>Warenkorb</h4>
+        </button>
+    </div>
+</section>
+<div class="divider-vertical"></div>
+<aside id="basket" class="basket-wrapper">
+    ${getBasketTemplate()}
+</aside>
