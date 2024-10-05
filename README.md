@@ -36,7 +36,7 @@ git clone https://github.com/robsc0de/delivery-service.git
 
 **2. Start the Application**
 
-Once the code is cloned/downloaded, navigate to the project directory on your computer. Open the index.html file in any web browser to launch the application.
+Once the code is cloned/downloaded, navigate to the project directory on your computer. Open the `index.html` file in any web browser to launch the application.
 
 <br>
 
