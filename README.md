@@ -23,9 +23,7 @@ Here is an overview of the most important functions of the project:
 ## Preview
 
 ![mockup-delivery-mobile](https://github.com/user-attachments/assets/5342ad98-0803-4def-a905-cc708deb4d8a)
-
 ![mockup-delivery-mbair](https://github.com/user-attachments/assets/aaf9cfce-75e4-40df-80a4-72e68ed1b92b)
-
 
 ## Setup Instructions
 
