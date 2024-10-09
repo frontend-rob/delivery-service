@@ -1,6 +1,6 @@
 # Delivery Service
 
-This project is part of the Frontend Web Development course from the [Developer Akademie.](https://developerakademie.com/) 
+This project has been developed as part of a frontend development bootcamp at the [Developer Akademie.](https://developerakademie.com/)
 
 <mark>NOTE:</mark> This is a learning project, so not all features may be fully working or implemented. The focus is on learning specific skills and applying them to different parts of the app.
 
