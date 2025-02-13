@@ -35,7 +35,7 @@ Download the source code by clicking the <kbd>Code</kbd> button or clone the rep
 
 
 ```
-git clone https://github.com/robsc0de/delivery-service.git
+git clone https://github.com/frontend-rob/delivery-service.git
 ```
 
 
